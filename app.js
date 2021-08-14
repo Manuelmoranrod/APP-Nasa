@@ -22,5 +22,5 @@ app.get('*', (req, res)=>{
 
 
 app.listen(port, () => {
-    console.log(`Nasa Landings app listening at http://localhost:${port}/api/astronomy/landings`)
+    console.log(`Nasa Landings app listening at http://localhost:${port}/api/astronomy`)
 })
