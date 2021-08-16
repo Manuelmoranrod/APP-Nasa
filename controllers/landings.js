@@ -1,4 +1,3 @@
-
 const Landings = require('../models/landings')
 
 const landings = {

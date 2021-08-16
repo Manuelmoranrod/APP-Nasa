@@ -4,6 +4,7 @@ require('./utils/db');// DDBB con Mongoose
 const process = require('process')
 
 const apiRoutes = require('./routes/landings')
+const routes = require('./routes/front-routes')
 
 const app = express()
 const port = process.env.PORT
@@ -15,6 +16,7 @@ app.use(express.json());
 
 //los endpoints permitidos
 app.use('/api',apiRoutes)
+app.use('/', routes)
 
 app.get('*', (req, res)=>{
     res.status(404).send("Sorry... 404 Not Found");

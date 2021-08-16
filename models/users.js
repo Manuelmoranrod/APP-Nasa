@@ -28,8 +28,8 @@ module.exports = mongoose.model('Users', usersSchema)
 {
     "name": "Manuel",
     "nickname": "Cabesabuque",
-    "affiliatedNumber": 123-23-45-33Y 
-    "affiliationDate": "2021-08-14"
+    "affiliatedNumber": 123-23-45-33Y,
+    "affiliationDate": "2021-08-14",
     "occupation": "Engineer",
     "birthdate": "1994-07-23",
     "deleted": false
