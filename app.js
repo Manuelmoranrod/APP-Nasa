@@ -11,10 +11,11 @@ const port = process.env.PORT
 //Motor de vista
 app.set('view engine', 'pug');
 app.set('views','./views');
-
+//Middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended:false}))// para que?
 
-//los endpoints permitidos
+//Endpoints permitidos
 app.use('/api',apiRoutes)
 app.use('/', routes)
 
