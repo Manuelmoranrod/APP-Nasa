@@ -9,10 +9,17 @@ html
         #mapid(style='width: 600px; height: 400px;')
     script.
       //sets the view to the inital area
-        var mymap = L.map('mapid').setView([34.048321956380754, -118.22672602012162], 13);
-        L.tileLayer('https://api.tiles.mapbox.com/v1/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        let data = !{jsStringify(data)};
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
-        id: 'mapbox/streets-v11',
+        id: 'mapbox/outdoors-v11',
         accessToken: 'pk.eyJ1IjoibWFudWVsbW9yYW5yb2QiLCJhIjoiY2tzaGw0aDc0MXVrbDJ2cXFjNHR5ZG83eCJ9.zB7dS_bSA_uOjTHLg-kd4w'
         }).addTo(mymap);
+        for(let n of data){
+            console.log(n)
+            var marker = L.marker([n.reclat, n.reclong]).addTo(mymap)
+            var popUpHTML = `Name: ${n.name}<br>Class: ${n.recclass}<br>Mass: ${n.mass}gr`;
+            marker.bindPopup(popUpHTML).openPopup()
+        }
