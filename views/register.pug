@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        include ./up_bar.pug
+        h2 Register Formulary
+        form(method='POST', action='/api/astronomy/guild')
+            label(for='name') Name
+            input(type='text', name='name', required)
+            label(for='nickname') Nickname
+            input(type='text', name='nickname', required)
+            label(for='birthdate') Birthdate
+            input(type='date', name='birthdate', placeholder='12/10/1492')
+            label(for='occupation') Ocupation
+            input(type='text', name='occupation')
+            label(for='affiliatedNumber') Affiliation number
+            input(type='text', name='affiliatedNumber', placeholder='*****')
+            input(type='submit', placeholder='Register', class='sendButton')
+            input(type="hidden" name="afDate" id="afDate" value=Date.now())
+            input(type="hidden" name="deleted" id="deleted" value="false")
+            input(type="hidden" name="astronomicalPoints" id="astronomicalPoints" value=0)
+            input(type="submit", value="Register User")

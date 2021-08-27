@@ -1,6 +1,14 @@
 let Users = require('../models/users')
 
 const users = {
+    register: async (req,res) => {
+        try {
+            let msj = 'Pagina de registro'
+            res.status(200).render('register', { msj })
+        } catch (error) {
+            res.status(400).send(error)
+        }
+    },
     createUser: async (req,res) => { 
         let user = new Users(req.body)
         try{
@@ -11,7 +19,7 @@ const users = {
             let data = [newUser, { 
                 "allUsers": usersList
             }]
-            res.status(201).json(data)
+            res.status(201).render('register')
 
         } catch(error) {
             res.status(404).json({
