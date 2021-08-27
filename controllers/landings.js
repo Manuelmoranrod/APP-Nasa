@@ -1,5 +1,5 @@
-
 const Landings = require('../models/landings')
+const jsStringify = require('js-stringify');
 
 const landings = {
     getLanded: async (req, res)=> {
@@ -26,7 +26,7 @@ const landings = {
                 landed = await Landings.find()
             }
             
-            res.status(200).json({ landed });
+            res.status(200).render('landings', { jsStringify, landed });
 
         }catch(error){
             res.status(400).json({ error: error.message });

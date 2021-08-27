@@ -24,10 +24,10 @@ router.get('/astronomy/guild/:num/neas', users.getNeas)
 router.get('/astronomy/guild/:num/necs', users.getNecs)
 router.get('/astronomy/guild/:num/points', users.getPoints)
 
-//router.put('/astronomy/guild/123-23-45-33Y', users.modifyNick)
-//router.put('/astronomy/guild/123-23-45-33Y/delete', users.deleteTrue)
+router.put('/astronomy/guild/:num', users.modifyNick)
+router.put('/astronomy/guild/:num/delete', users.deleteTrue)
 
-//router.delete('/astronomy/guild/123-23-45-33Y', users.deleteUsers)
+router.delete('/astronomy/guild/123-23-45-33Y', users.deleteUser)
 
 
 
